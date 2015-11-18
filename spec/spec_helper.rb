@@ -1,5 +1,5 @@
 require 'rspec'
-require './main'
+require './person'
 
 RSpec.configure do |config|
   config.color = true
