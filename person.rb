@@ -32,8 +32,6 @@ class Person
 
   #to_s
   def to_s
-    puts fullname + " was born on " 
-    print dob.strftime('%y-%m-%d')
-    print "\n Their email addresses are: " + emails.to_s + ".\n Their phone numbers are: " +    phone_numbers.to_s + "\n"
+    fullname + " was born on " + dob.to_s + ".\n Their email addresses are: " + emails.to_s + ".\n Their phone numbers are: " +    phone_numbers.to_s
   end
 end

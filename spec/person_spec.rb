@@ -59,9 +59,9 @@ describe "Person class - personal detail entries in addressbook" do
 
     person.add_email "joe@foo.com"
     person.add_email "joe.bloggs@work.com"
-    person.remove_email(0)
+    person.remove_email(1)
     
     person.to_s
-    expect(person.to_s).to eq puts "Joe Bloggs was born on 1990-01-01.\n Their email addresses are: [\"joe@foo.com\"].\n Their phone numbers are [\"07712345678\", \"02012345678\"]"
+    expect(person.to_s).to eq "Joe Bloggs was born on 1990-01-01.\n Their email addresses are: [\"joe@foo.com\"].\n Their phone numbers are: [\"07712345678\", \"02012345678\"]"
   end
 end
