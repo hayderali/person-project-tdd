@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Person class - entries in addressbook" do
+describe "Person class - personal detail entries in addressbook" do
   it "should store and return personal information" do
     person = Person.new("joe","bloggs","1 Jan 1990")
 
@@ -12,7 +12,7 @@ describe "Person class - entries in addressbook" do
   
   end 
 
-  it "should store and return email addresses" do
+    it "should store and return email addresses as an array" do
    
     person = Person.new("joe","bloggs","1 Jan 1990")
 
@@ -26,10 +26,10 @@ describe "Person class - entries in addressbook" do
   
   end
 
-  it "should store and return phone numbers" do
+    it "should store and return phone numbers as an array" do
     
     person = Person.new("joe","bloggs","1 Jan 1990")
-    
+   
     person.phone_numbers
     expect(person.phone_numbers.class).to be Array
     expect(person.phone_numbers).to eq []
@@ -37,5 +37,16 @@ describe "Person class - entries in addressbook" do
     person.add_phone "07712345678"
     person.add_phone "02012345678"
     expect(person.phone_numbers).to eq ["07712345678", "02012345678"]
+  end
+
+  it "should remove emails by index from the email array" do
+    
+    person = Person.new("joe","bloggs","1 Jan 1990")
+   
+    person.add_email "joe@foo.com"
+    person.add_email "joe.bloggs@work.com"
+    person.remove_email(0)
+    
+    expect(person.emails).to eq ["joe.bloggs@work.com"]
   end
 end

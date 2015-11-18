@@ -23,7 +23,5 @@ class Person
   #add phone
   def add_phone(number)
     phone_numbers.push(number)
-  end
-
-  
+  end 
 end
