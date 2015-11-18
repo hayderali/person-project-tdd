@@ -64,4 +64,17 @@ describe "Person class - personal detail entries in addressbook" do
     person.to_s
     expect(person.to_s).to eq "Joe Bloggs was born on 1990-01-01.\n Their email addresses are: [\"joe@foo.com\"].\n Their phone numbers are: [\"07712345678\", \"02012345678\"]"
   end
+
+  it "should have a print details method that prints out the details of the person in a specified format" do
+
+
+    person = Person.new("joe","bloggs","1 Jan 1990")
+    
+    person.add_email "joe@foo.com"
+    person.add_email "joe.bloggs@work.com"
+    person.add_phone "02012345678"
+ 
+    expect(person.print_details).to eq "Joe Bloggs\n----------\nDate of Birth: 01 January 1990\n\nEmail Addresses:\n- joe@foo.com\n- joe.bloggs@work.com\n\nPhone Numbers:\n- 02012345678"
+
+  end
 end

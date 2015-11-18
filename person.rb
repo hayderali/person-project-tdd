@@ -34,4 +34,9 @@ class Person
   def to_s
     fullname + " was born on " + dob.to_s + ".\n Their email addresses are: " + emails.to_s + ".\n Their phone numbers are: " +    phone_numbers.to_s
   end
+
+  #print details
+  def print_details
+    fullname + "\n" + ('-' * fullname.length) + "\nDate of Birth: " + dob.strftime('%d %B %Y') + "\n\nEmail Addresses:\n- " + emails[0] +"\n- " + emails[1] + "\n\nPhone Numbers:\n- " + phone_numbers[0]
+  end
 end
