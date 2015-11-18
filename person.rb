@@ -23,5 +23,17 @@ class Person
   #add phone
   def add_phone(number)
     phone_numbers.push(number)
-  end 
+  end
+
+  #remove email
+  def remove_email(index)
+    emails.delete_at(index)
+  end
+
+  #to_s
+  def to_s
+    puts fullname + " was born on " 
+    print dob.strftime('%y-%m-%d')
+    print "\n Their email addresses are: " + emails.to_s + ".\n Their phone numbers are: " +    phone_numbers.to_s + "\n"
+  end
 end

@@ -27,7 +27,7 @@ describe "Person class - personal detail entries in addressbook" do
   end
 
     it "should store and return phone numbers as an array" do
-    
+  
     person = Person.new("joe","bloggs","1 Jan 1990")
    
     person.phone_numbers
@@ -48,5 +48,20 @@ describe "Person class - personal detail entries in addressbook" do
     person.remove_email(0)
     
     expect(person.emails).to eq ["joe.bloggs@work.com"]
+  end
+
+  it "should print out details including date of birth addresses and numbers using the to_s method" do
+
+    person = Person.new("joe","bloggs","1 Jan 1990")
+    
+    person.add_phone "07712345678"
+    person.add_phone "02012345678"
+
+    person.add_email "joe@foo.com"
+    person.add_email "joe.bloggs@work.com"
+    person.remove_email(0)
+    
+    person.to_s
+    expect(person.to_s).to eq puts "Joe Bloggs was born on 1990-01-01.\n Their email addresses are: [\"joe@foo.com\"].\n Their phone numbers are [\"07712345678\", \"02012345678\"]"
   end
 end
