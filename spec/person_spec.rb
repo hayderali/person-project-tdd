@@ -17,12 +17,12 @@ describe "Person class - entries in addressbook" do
     person = Person.new("joe","bloggs","1 Jan 1990")
 
     person.emails
-    expect(person.dob.class).to be Array
-    expect(person.email.to_s).to eq []
+    expect(person.emails.class).to be Array
+    expect(person.emails).to eq []
 
-    person.add_email "joo@foo.com"
+    person.add_email "joe@foo.com"
     person.add_email "joe.bloggs@work.com"
-    expect(person.email.to_s).to eq ["joe@foo.com", "joe.bloggs@word.com"]
+    expect(person.emails).to eq ["joe@foo.com", "joe.bloggs@work.com"]
   
   end
 
@@ -31,7 +31,7 @@ describe "Person class - entries in addressbook" do
     person = Person.new("joe","bloggs","1 Jan 1990")
     
     person.phone_numbers
-    expect(person.dob.class).to be Array
+    expect(person.phone_numbers.class).to be Array
     expect(person.phone_numbers).to eq []
 
     person.add_phone "07712345678"
