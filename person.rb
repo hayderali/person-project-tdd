@@ -37,6 +37,6 @@ class Person
 
   #print details
   def print_details
-    fullname + "\n" + ('-' * fullname.length) + "\nDate of Birth: " + dob.strftime('%d %B %Y') + "\n\nEmail Addresses:\n- " + emails[0] +"\n- " + emails[1] + "\n\nPhone Numbers:\n- " + phone_numbers[0]
+    fullname + "\n" + ('-' * fullname.length) + "\nDate of Birth: " + dob.strftime('%d %B %Y') + "\n\nEmail Addresses:\n- " + (emails * "\n- " )+ "\n\nPhone Numbers:\n- " + (phone_numbers * "\n -")
   end
 end
