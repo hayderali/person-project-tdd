@@ -1,5 +1,7 @@
 require 'rspec'
 require './person'
+require './family-member'
+require './address-book'
 
 RSpec.configure do |config|
   config.color = true
