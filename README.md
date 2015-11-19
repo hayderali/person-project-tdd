@@ -9,10 +9,13 @@ This is a paragraph
 
 **bold**
 
--list 1
--list 2
--list 3
-*list 4
+
+###File list
+-----------
+- Files and stuff
+- More files
+- Even more
+* list 4
 
 ```
 block of stuff
