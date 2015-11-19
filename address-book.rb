@@ -13,7 +13,7 @@ class AddressBook
 
   def list
     i=1
-    "Address Book\n------------\nEntry #{i}: "+( entries * "\nEntry #{i.next}: ")
+    "Address Book\n------------\nEntry #{i}: "+( entries * "\nEntry #{i.next}: ") 
   end
 
 end
