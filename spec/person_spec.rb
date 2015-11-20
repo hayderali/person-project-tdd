@@ -74,6 +74,6 @@ describe "Person class - personal detail entries in addressbook" do
     person.add_email "joe.bloggs@work.com"
     person.add_phone "02012345678"
  
-    expect(person.print_details).to eq "Joe Bloggs\n----------\nDate of Birth: 01 January 1990\n\nEmail Addresses:\n- joe@foo.com\n- joe.bloggs@work.com\n\nPhone Numbers:\n- 02012345678"
+    expect{ person.print_details }.to output("Joe Bloggs\n----------\nDate of Birth: \n01 January 1990\n\nEmail Addresses:\n- joe@foo.com\n- joe.bloggs@work.com\n\nPhone Numbers:\n- 02012345678\n").to_stdout
   end
 end

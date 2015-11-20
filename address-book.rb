@@ -11,19 +11,17 @@ class AddressBook
 
   def add(entry)
     entries.push(entry)
-    name_list.push(entry.fullname) #Requires some refactoring to make this less redundant
-
   end
-
-  def list
+  def list 
     puts "Address Book\n------------\n"
-    entries.each.with_index(1) { |person, index| puts "Entry #{index}: " + person.fullname}
+    entries.each.with_index(1) { |person, index| puts "Entry #{index}: " + person.fullname }
   end
-
   def yml
     file = YAML.load_file('./phonebook_data.yml')
     file["people"].each do |yml_person|
-      person = Person.new(yml_person["fname"], yml_person["surname"], yml_person["dob"])
+      person = Person.new(yml_person["fname"], 
+                          yml_person["surname"], 
+			  yml_person["dob"])
       entries.push(person)
       yml_person["emails"].each { |e| person.add_email(e) }
       yml_person["phone"].each { |p| person.add_phone(p) }

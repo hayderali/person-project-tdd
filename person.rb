@@ -3,8 +3,8 @@ require 'date'
 class Person
   attr_accessor :dob,:first_name,:surname
   attr_reader :emails, :phone_numbers
-  def initialize(first_name,surname,dob)
-    @dob = Date.parse(dob)
+  def initialize(first_name,surname,dob=nil)
+    @dob = Date.parse(dob) unless dob.nil?
     @first_name = first_name.capitalize
     @surname = surname.capitalize
     @emails = Array.new
@@ -37,6 +37,8 @@ class Person
 
   #print details
   def print_details
-    fullname + "\n" + ('-' * fullname.length) + "\nDate of Birth: " + dob.strftime('%d %B %Y') + "\n\nEmail Addresses:\n- " + (emails * "\n- " )+ "\n\nPhone Numbers:\n- " + (phone_numbers * "\n -")
+    puts fullname + "\n" + ('-' * fullname.length) + "\nDate of Birth: "
+    print dob.strftime('%d %B %Y') unless dob.nil?
+    puts "\n\nEmail Addresses:\n- " + (emails * "\n- " )+ "\n\nPhone Numbers:\n- " + (phone_numbers * "\n -")
   end
 end

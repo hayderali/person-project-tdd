@@ -10,7 +10,7 @@ describe "Address book class" do
     book.add person1
     book.add person2
     expect(book.entries.class).to be Array
-
+    #expect(book.entries[0]).to eq ""
   end
 
   it "should print out to command line" do
@@ -21,15 +21,17 @@ describe "Address book class" do
     book.add person1
     book.add person2
     book.list
-    expect(book.list).to eq "Address Book\n------------\nEntry 1: Joe Bloggs\nEntry 2: Andy Nother"
+    expect{ book.list }.to output("Address Book\n------------\nEntry 1: Joe Bloggs\nEntry 2: Andy Nother\n").to_stdout
   end
   
   it "should read in a YAML file and put it into the address book" do
     
     file = YAML.load_file('phonebook_data.yml')
     book = AddressBook.new
-    #file.each{ |person| entries.push(person) }
     expect(file.class).to be Hash
+    book.yml
+    book.list
+    expect{ book.list }.to output("Address Book\n------------\nEntry 1: Joe Bloggs\nEntry 2: Andy Nother\n").to_stdout
 
   end
 
