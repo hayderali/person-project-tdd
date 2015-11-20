@@ -10,7 +10,10 @@ describe "Address book class" do
     book.add person1
     book.add person2
     expect(book.entries.class).to be Array
-    #expect(book.entries[0]).to eq ""
+
+    #iterate over array and check they are all people
+    #obj.map { |x,i|  x * i }
+    expect( book.entries.each { |x| puts x.class } ).to be Person
   end
 
   it "should print out to command line" do
